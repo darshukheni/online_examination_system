@@ -1,0 +1,71 @@
+///// Exam.php //////
+
+
+
+    
+
+    // document.addEventListener("DOMContentLoaded", () => {
+    //     var but = document.getElementById("snap");
+    //     var video = document.getElementById("video");
+    //     var mediaDevices = navigator.mediaDevices;
+    //     vid.muted = true;
+    //     but.addEventListener("click", () => {
+  
+    //       // Accessing the user camera and video.
+    //       mediaDevices
+    //         .getUserMedia({
+    //           video: true,
+    //           audio: true,
+    //         })
+    //         .then((stream) => {
+  
+    //           // Changing the source of video to current stream.
+    //           video.srcObject = stream;
+    //           video.addEventListener("loadedmetadata", () => {
+    //             video.play();
+    //           });
+    //         })
+    //         .catch(alert);
+    //     });
+    //   });
+
+
+
+<script language="JavaScript">
+
+ 'use strict';
+const video = decument.getElementBtId('video');
+const canvas = decument.getElementBtId('canvas');
+const snap = decument.getElementBtId('snap');
+// const video = decument.getElementBtId('video');
+
+const constraints = {
+    audio : true,
+    video : {
+        width :60,
+        height:60
+    }
+};
+
+async function init(){
+    try{
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        handleSuccess(stream);
+    }
+    catch(e){
+        alert("Err");
+    }
+}
+
+function handleSuccess(stream){
+    window.stream=stream;
+    video.srcObject = stream;
+}
+
+init();
+var context = canvas.getContext('2d');
+snap.addEventListener("click",function(){
+    context.drawImage(video,0,0,649,480);
+}) 
+
+</script> 
