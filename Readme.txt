@@ -23,12 +23,3 @@ FIRST DOWNLOAD
 
 7.Run the script http://localhost/Online Examination System
 
-lahat ng ito ituturo ko
-
-admin
-Username: admin@username
-Password: admin@password
-
-user
-Username:admin@password
-Password:jane
